@@ -13,6 +13,9 @@ var UserSchema = new Schema({
         type: String,
         required: true
     },
+    daily_log: [],
+    daily_journal: [],
+    total_calculations: []
 });
 
 var User = mongoose.model("User", UserSchema);
