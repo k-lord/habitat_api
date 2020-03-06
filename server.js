@@ -30,15 +30,21 @@ app.get('/', function (req, res) {
 
 // API Routes will go here
 
+// 'POST' / 'create' new User
+
 // 'GET' / 'find' all Users
 
 // 'GET' / 'findOne' User by _id
 
-// 'PUT' / 'findOneAndUpdate' user by _id
+// 'PUT' / 'findOneAndUpdate' User by _id
 
 // 'POST' / 'create' new DailyLog
 
 // 'POST' / 'create' new DailyJournal
+
+// 'POST' / 'create' new Calculations
+
+// 'PUT' / 'findOneAndUpdate' Calculations by _id
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
