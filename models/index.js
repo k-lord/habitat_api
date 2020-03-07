@@ -1,8 +1,10 @@
 // Exporting an object containing all models
 
 module.exports = {
-    User: require("./user"),
-    DailyLog: require("./dailyLog"),
-    DailyJournal: require("./dailyJournal"),
-    Calculations: require("./calculations")
+    User: require("./schema"),
+    DailyLog: require("./schema"),
+    DailyJournal: require("./schema"),
+    DailyCalc: require("./schema"),
+    FirstTime: require("./schema")
+
 };

@@ -1,0 +1,45 @@
+[
+    {   
+        "id": 1,
+        "question": "What brings you here?",
+        "answer_choices": ["journaling", "managing stress", "building mindful habits", "curiosity"]
+    },
+    {   
+        "id": 2,
+        "question": "When is your head most clear?"
+    },
+    {   
+        "id": 3,
+        "question": "What kind of person do you view yourself as today?",
+        "answer_choices": [
+            "adapatable", "confident", "kind", "friendly", "calm",
+            "noncommital", "preoccupied", "indifferent", "perfectionist", "funny",
+            "intolerant", "insecure", "abrasive", "obsessive", "cranky"
+
+        ]
+    },
+    {   
+        "id": 4,
+        "question": "What kind of person do you want to be?",
+        "answer_choices": [
+            "adapatable", "confident", "kind", "friendly", "calm",
+            "successful", "funny", "present", "dedicated", "mindful",
+            "creative", "honest", "tolerant", "responsible", "patient"
+        ]
+    },
+    {   
+        "id": 5,
+        "question": "What causes you stress?",
+        "answer_choices": ["work", "school", "money"]
+    },
+    {   
+        "id": 6,
+        "question": "What brings you joy?",
+        "answer_choices": ["family", "work", "relationships"]
+    },
+    {   
+        "id": 7,
+        "question": "What do you want out of this?",
+        "answer_choices": ["stress relief", "ability to journal", "to maintain mindful habits", "consistency", "a clearer headspace"]
+    }
+]
