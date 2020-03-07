@@ -30,15 +30,81 @@ app.get('/', function (req, res) {
 
 // API Routes will go here
 
+// 'POST' / 'create' new User
+app.post("/submit", function(req, res) {
+    // Create a new user using req.body
+    db.User.create(req.body)
+      .then(function(dbUser) {
+        res.json(dbUser);
+      })
+      .catch(function(err) {
+        res.json(err);
+      });
+  });
+
 // 'GET' / 'find' all Users
+app.get('/user', function (req, res) {
+    db.User.find({}, function (err, found) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        } else {
+            res.json(found);
+        }
+    });
+});
 
 // 'GET' / 'findOne' User by _id
+app.get('/user/:_id', function (req, res) {
+    db.User.findOne({ _id: req.params.id })
+        .then(function (dbUser) {
+            res.json(dbUser)
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+});
 
-// 'PUT' / 'findOneAndUpdate' user by _id
+// 'PUT' / 'findOneAndUpdate' User's Daily Log by user _id
+
+app.put('/user/:_id', function (req, res) {
+    db.User.findOneAndUpdate({ _id: req.params.id }, 
+        {
+            '$push': {
+                'daily_log': {
+                    'answer_1': req.body['answer_1'],
+                    'answer_2': req.body['answer_2'],
+                    'answer_3': req.body['answer_3'],
+                    'answer_4': req.body['answer_4'],
+                    'answer_5': req.body['answer_5']
+                }
+            }
+        })
+    .then(function(dailyLog) {
+        res.json(dailyLog)
+    })
+    .catch(function(err) {
+        res.json(err);
+    });
+});
 
 // 'POST' / 'create' new DailyLog
 
+// 'GET' / 'find' all DailyLogs
+
+// 'GET' / 'findOne' DailyLog by _id
+
 // 'POST' / 'create' new DailyJournal
+
+// 'GET' / 'find' all DailyJournals
+
+// 'GET' / 'findOne' DailyJournal by _id
+
+// 'POST' / 'create' new Calculations
+
+// 'GET' / 'findOne' Calculation by _id
+
+// 'PUT' / 'findOneAndUpdate' Calculations by _id
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
