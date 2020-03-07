@@ -4,7 +4,7 @@ var mongoose = require("mongoose");
 // Schema constructer reference
 var Schema = mongoose.Schema;
 
-var Calculations = new Schema({
+var CalculationsSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
@@ -22,6 +22,9 @@ var Calculations = new Schema({
         type: Number
     },
     minus_mood: {
+        type: Number
+    },
+    minus_minus_mood: {
         type: Number
     }
 });

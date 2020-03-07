@@ -14,6 +14,6 @@ var DailyJournalSchema = new Schema({
     }
 });
 
-var DailyLog = mongoose.model("DailyJournal", DailyJournalSchema);
+var DailyJournal = mongoose.model("DailyJournal", DailyJournalSchema);
 
 module.exports = DailyJournal;
