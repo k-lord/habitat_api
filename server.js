@@ -68,7 +68,7 @@ app.get('/user/:_id', function (req, res) {
 // 'PUT' / 'findOneAndUpdate' User's Daily Log by user _id
 
 app.put('/user/:_id/log', function (req, res) {
-    db.User.findOneAndUpdate({ _id: req.params.id }, 
+    db.User.findOneAndUpdate({ _id: req.params._id },
         {
             '$push': {
                 'daily_log': {req.body
