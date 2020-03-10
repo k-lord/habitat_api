@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
 var logger = require('morgan');
+let bodyParser = require('body-parser');
 
 // Initializing Express App
 var app = express();
@@ -12,6 +13,8 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Database Config
 var db = require('./models');
@@ -31,9 +34,9 @@ app.get('/', function (req, res) {
 // API Routes will go here
 
 // 'POST' / 'create' new User
-app.post("/submit", function(req, res) {
+app.post("/submit",bodyParser.json(), function(req, res) {
     // Create a new user using req.body
-    db.User.create(req.body)
+    db.users.create(req.body)
       .then(function(dbUser) {
         res.json(dbUser);
       })
@@ -44,7 +47,7 @@ app.post("/submit", function(req, res) {
 
 // 'GET' / 'find' all Users
 app.get('/user', function (req, res) {
-    db.User.find({}, function (err, found) {
+    db.users.find({}, function (err, found) {
         if (err) {
             console.log(err);
             res.send(err);
@@ -56,7 +59,7 @@ app.get('/user', function (req, res) {
 
 // 'GET' / 'findOne' User by _id
 app.get('/user/:_id', function (req, res) {
-    db.User.findOne({ _id: req.params.id })
+    db.users.findOne({ _id: req.params.id })
         .then(function (dbUser) {
             res.json(dbUser)
         })
@@ -68,11 +71,11 @@ app.get('/user/:_id', function (req, res) {
 // 'PUT' / 'findOneAndUpdate' User's Daily Log by user _id
 
 app.put('/user/:_id/log', function (req, res) {
-    db.User.findOneAndUpdate({ _id: req.params._id },
+    db.users.findOneAndUpdate({ _id: req.params._id },
         {
             '$push': {
-                'daily_log': {req.body
-                }
+                'daily_log': req.body
+                
             }
         })
     .then(function(dailyLog) {
