@@ -34,8 +34,6 @@ var DailyCalcSchema = new Schema({
     }
 });
 
-var DailyCalc = mongoose.model("DailyCalc", DailyCalcSchema);
-
 // First Time Schema
 var FirstTimeSchema = new Schema ({
     reasons: [],
@@ -49,8 +47,6 @@ var FirstTimeSchema = new Schema ({
     goals: []
 })
 
-var FirstTime = mongoose.model("FirstTime", FirstTimeSchema)
-
 // Daily Journal Schema
 
 var DailyJournalSchema = new Schema({
@@ -62,8 +58,6 @@ var DailyJournalSchema = new Schema({
         type: String
     }
 });
-
-var DailyJournal = mongoose.model("DailyJournal", DailyJournalSchema);
 
 // Daily Log Schema
 
@@ -90,27 +84,27 @@ var DailyLogSchema = new Schema({
     }
 });
 
-var DailyLog = mongoose.model("DailyLog", DailyLogSchema);
-
 // User Schema
 
 var UserSchema = new Schema({
     username: {
         type: String,
-        required: true,
+        required: "Please enter your username",
+        trim: true
     },
     password: {
         type: String,
-        required: true
+        required: "Please enter your password",
+        trim: true
     },
-    properties: [ FirstTime ],
-    daily_log: [ DailyLog ],
-    daily_journal: [ DailyJournal ],
-    daily_calc: [ DailyCalc ],
+    first_quiz: [ FirstTimeSchema ],
+    daily_log: [ DailyLogSchema ],
+    daily_journal: [ DailyJournalSchema ],
+    daily_calc: [ DailyCalcSchema ],
     
 });
 
-var User = mongoose.model("User", UserSchema);
+var users = mongoose.model("users", UserSchema);
 
 
-module.exports = DailyCalc, FirstTime, DailyJournal, DailyLog, User;
+module.exports = users;

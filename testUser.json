@@ -2,7 +2,7 @@
     {
         "username": "asamrodcky",
         "password": "test123",
-        "properties": {
+        "first_quiz": {
             "reasons": [
                 "building mindful habits",
                 "curiosity"
@@ -38,19 +38,16 @@
             ]
         },
         "daily_log": {
-            "date": 0,
             "answer_1": 4,
-            "answer_2": 5,
+            "answer_2": true,
             "answer_3": 6,
             "answer_4": 1,
             "answer_5": 4
         },
         "daily_journal": {
-            "date": 0,
             "feels": "Today was a good day"
         },
         "daily_calc": {
-            "date": 0,
             "mood_average": 0,
             "self_average": 0,
             "plus_plus_mood": 0,
@@ -63,7 +60,7 @@
     {
         "username": "klord",
         "password": "test456",
-        "properties": {
+        "first_quiz": {
             "reasons": [
                 "journaling",
                 "managing stress"
@@ -122,7 +119,7 @@
     {
         "username": "angeloC",
         "password": "test789",
-        "properties": {
+        "first_quiz": {
             "reasons": [
                 "journaling",
                 "curiosity"
