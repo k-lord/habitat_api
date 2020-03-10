@@ -1,0 +1,182 @@
+[
+    {
+        "username": "asamrodcky",
+        "password": "test123",
+        "properties": {
+            "reasons": [
+                "building mindful habits",
+                "curiosity"
+            ],
+            "preferred_time": 0,
+            "current_self": [
+                "confident",
+                "preoccupied",
+                "cranky",
+                "calm",
+                "adaptable"
+            ],
+            "future_self": [
+                "successful",
+                "present",
+                "dedicated",
+                "responsible",
+                "creative"
+            ],
+            "element_stress": [
+                "school",
+                "finances",
+                "anxiety"
+            ],
+            "element_joy": [
+                "being outside",
+                "physical activity",
+                "hobbies"
+            ],
+            "goals": [
+                "stress relief",
+                "to maintain mindful habits"
+            ]
+        },
+        "daily_log": {
+            "date": 0,
+            "answer_1": 4,
+            "answer_2": 5,
+            "answer_3": 6,
+            "answer_4": 1,
+            "answer_5": 4
+        },
+        "daily_journal": {
+            "date": 0,
+            "feels": "Today was a good day"
+        },
+        "daily_calc": {
+            "date": 0,
+            "mood_average": 0,
+            "self_average": 0,
+            "plus_plus_mood": 0,
+            "plus_mood": 0,
+            "minus_mood": 0,
+            "minus_minus_mood": 0
+        }
+    },
+
+    {
+        "username": "klord",
+        "password": "test456",
+        "properties": {
+            "reasons": [
+                "journaling",
+                "managing stress"
+            ],
+            "preferred_time": 0,
+            "current_self": [
+                "kind",
+                "friendly",
+                "perfectionist",
+                "funny",
+                "insecure"
+            ],
+            "future_self": [
+                "confident",
+                "present",
+                "honest",
+                "tolerant",
+                "patient"
+            ],
+            "element_stress": [
+                "work",
+                "time management",
+                "social media"
+            ],
+            "element_joy": [
+                "relationships",
+                "learning something new"
+            ],
+            "goals": [
+                "stress relief",
+                "ability to journal"
+            ]
+        },
+        "daily_log": {
+            "date": 0,
+            "answer_1": 1,
+            "answer_2": 2,
+            "answer_3": 1,
+            "answer_4": 5,
+            "answer_5": 6
+        },
+        "daily_journal": {
+            "date": 0,
+            "feels": "today was a not so good day"
+        },
+        "daily_calc": {
+            "date": 0,
+            "mood_average": 0,
+            "self_average": 0,
+            "plus_plus_mood": 0,
+            "plus_mood": 0,
+            "minus_mood": 0,
+            "minus_minus_mood": 0
+        }
+    },
+    {
+        "username": "angeloC",
+        "password": "test789",
+        "properties": {
+            "reasons": [
+                "journaling",
+                "curiosity"
+            ],
+            "preferred_time": 0,
+            "current_self": [
+                "perfectionist",
+                "preoccupied",
+                "confident",
+                "kind",
+                "calm"
+            ],
+            "future_self": [
+                "mindful",
+                "tolerant",
+                "friendly",
+                "mindful",
+                "adaptable"
+            ],
+            "element_stress": [
+                "family",
+                "school",
+                "work"
+            ],
+            "element_joy": [
+                "reading",
+                "work",
+                "relationships"
+            ],
+            "goals": [
+                "consistency",
+                "a clearer headspace"
+            ]
+        },
+        "daily_log": {
+            "date": 0,
+            "answer_1": 5,
+            "answer_2": 5,
+            "answer_3": 8,
+            "answer_4": 9,
+            "answer_5": 1
+        },
+        "daily_journal": {
+            "date": 0,
+            "feels": "today was a terrible, no good, very bad day"
+        },
+        "daily_calc": {
+            "date": 0,
+            "mood_average": 0,
+            "self_average": 0,
+            "plus_plus_mood": 0,
+            "plus_mood": 0,
+            "minus_mood": 0,
+            "minus_minus_mood": 0
+        }
+    }
+]

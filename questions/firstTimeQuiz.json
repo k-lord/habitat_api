@@ -30,12 +30,32 @@
     {   
         "id": 5,
         "question": "What causes you stress?",
-        "answer_choices": ["work", "school", "money"]
+        "answer_choices": [
+            "work", 
+            "school",
+            "finances",
+            "social media",
+            "family",
+            "relationships",
+            "anxiety",
+            "time management",
+            "health"
+        ]
     },
     {   
         "id": 6,
         "question": "What brings you joy?",
-        "answer_choices": ["family", "work", "relationships"]
+        "answer_choices": [
+            "family",
+            "work",
+            "relationships",
+            "being outside",
+            "physical activity",
+            "learning something new",
+            "hobbies",
+            "reading",
+            "frienships"
+        ]
     },
     {   
         "id": 7,
