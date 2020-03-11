@@ -34,16 +34,16 @@ app.get('/', function (req, res) {
 // API Routes will go here
 
 // 'POST' / 'create' new User
-app.post("/submit", bodyParser.json(), function(req, res) {
+app.post("/submit", bodyParser.json(), function (req, res) {
     // Create a new user using req.body
     db.users.create(req.body)
-      .then(function(dbUser) {
-        res.json(dbUser);
-      })
-      .catch(function(err) {
-        res.json(err);
-      });
-  });
+        .then(function (dbUser) {
+            res.json(dbUser);
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+});
 
 // 'GET' / 'find' all Users
 app.get('/user', function (req, res) {
@@ -72,6 +72,7 @@ app.get('/user/:_id', function (req, res) {
 // 'PUT' / 'findOneAndUpdate ' to save the First Quiz Object to a specific User found by _id
 
 app.get('/user/:_id/firstquiz', function (req, res) {
+
     var quizObj = req.body;
 
     db.users.findOneAndUpdate(
@@ -113,10 +114,11 @@ app.put('/user/:_id/newlog', function (req, res) {
 // 'PUT' / 'findOneAndUpdate' to push a new Daily Calculations Object into a specific User found by _id
 
 app.put('/user/:_id/newcalc', function (req, res) {
+
     var calcObj = req.body;
 
     db.users.findOneAndUpdate(
-        {_id: req.params._id},
+        { _id: req.params._id },
         { '$push': { 'daily_calc': calcObj } },
         function (err, success) {
             if (error) {
@@ -125,7 +127,7 @@ app.put('/user/:_id/newcalc', function (req, res) {
                 console.log(success);
             }
         })
-        .then(function(dbUserUpdate) {
+        .then(function (dbUserUpdate) {
             res.json(dbUserUpdate)
         });
 });
@@ -133,10 +135,11 @@ app.put('/user/:_id/newcalc', function (req, res) {
 // 'PUT' / 'findOneAndUpdate' to push a new Daily Journal Object into a specific User found by _id
 
 app.put('/user/:_id/newjournal', function (req, res) {
+
     var journalObj = req.body;
 
     db.users.findOneAndUpdate(
-        {_id: req.params._id},
+        { _id: req.params._id },
         { '$push': { 'daily_journal': journalObj } },
         function (error, success) {
             if (error) {
@@ -145,7 +148,7 @@ app.put('/user/:_id/newjournal', function (req, res) {
                 console.log(success);
             }
         })
-        .then(function(dbUserUpdate) {
+        .then(function (dbUserUpdate) {
             res.json(dbUserUpdate)
         });
 });
@@ -153,14 +156,50 @@ app.put('/user/:_id/newjournal', function (req, res) {
 
 // 'PUT' / 'findOneAndUpdate' to edit existing Daily Journal Object by Journal _id
 
+app.put('/user/:_id/editjournal', function (req, res) {
 
-// 'PUT' / 'findOneAndUpdate' to delete existing Daily Journal Object by Journal _id
+    var journalObj = req.body;
+
+    db.users.findOneAndUpdate(
+        { _id: req.params._id, "daily_journal._id": journalObj._id },
+        {
+            "$set": {
+                "daily_journal.$": journalObj
+            }
+        },
+        function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(success);
+            }
+        });
+});
+
+
+// 'PUT' / 'findOneAndDelete' to delete existing Daily Journal Object by Journal _id
+
+//!!! Currently deletes the whole user instead of just the journal entry
+
+/*
+app.put('/user/:_id/deletejournal', function (req, res) {
+
+    var journalObj = req.body;
+
+    db.users.findOneAndDelete(
+        { _id: req.params._id, "daily_journal._id": journalObj._id }, function (err) {
+        if (err) console.log(err);
+        console.log("Successful deletion");
+    });
+
+});
+*/
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 // Listen on port 3000
-app.listen(process.env.PORT || 3000, function() {
+app.listen(process.env.PORT || 3000, function () {
     console.log('Express server on port %d in %s mode', this.address().port, app.settings.env);
 })
 
