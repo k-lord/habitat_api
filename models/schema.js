@@ -6,6 +6,24 @@ var Schema = mongoose.Schema;
 
 // Total Calculations Schema
 
+var TotalCalcSchema = new Schema({
+    mean:{
+        type: Number
+    },
+    median:{
+        type: Number
+    },
+    max:{
+        type: Number
+    },
+    min:{
+        type: Number
+    },
+    iqr:{
+        type: Number
+    },
+})
+
 //var TotalCalc = mongoose.model("Calculations", TotalCalcSchema);
 
 // Daily Calculations Schema
@@ -20,18 +38,15 @@ var DailyCalcSchema = new Schema({
     self_average: {
         type: Number
     },
-    plus_plus_mood: {
+    work_school_mood: {
         type: Number
     },
-    plus_mood: {
+    life_mood: {
         type: Number
     },
-    minus_mood: {
+    world_mood: {
         type: Number
     },
-    minus_minus_mood: {
-        type: Number
-    }
 });
 
 // First Time Schema
@@ -101,6 +116,7 @@ var UserSchema = new Schema({
     daily_log: [ DailyLogSchema ],
     daily_journal: [ DailyJournalSchema ],
     daily_calc: [ DailyCalcSchema ],
+    total_cal: [TotalCalcSchema]
     
 });
 
