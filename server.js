@@ -57,19 +57,39 @@ app.get('/user', function (req, res) {
     });
 });
 
-// 'GET' / 'findOne' User by _id
+// 'GET' / 'findById' to find a specific User by _id
 app.get('/user/:_id', function (req, res) {
-    db.users.findOne({ _id: req.params.id }, function (err, found) {
+    db.users.findById({ _id: req.params._id }, function (err, user) {
         if (err) {
             console.log(err);
             res.send(err);
         } else {
-            res.json(found)
+            res.json(user)
         }
     })
 });
 
-// 'PUT' / 'findOneAndUpdate' User's Daily Log by user _id
+// 'PUT' / 'findOneAndUpdate ' to save the First Quiz Object to a specific User found by _id
+
+app.get('/user/:_id/firstquiz', function (req, res) {
+    var quizObj = req.body;
+
+    db.users.findOneAndUpdate(
+        { _id: req.params._id },
+        { first_quiz: quizObj },
+        function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(success)
+            }
+        })
+        .then(function (dbUserUpdate) {
+            res.json(dbUserUpdate)
+        });
+});
+
+// 'PUT' / 'findOneAndUpdate' to push a new Daily Log Object into a specific User found by _id
 
 app.put('/user/:_id/newlog', function (req, res) {
 
@@ -90,23 +110,52 @@ app.put('/user/:_id/newlog', function (req, res) {
         });
 });
 
-// 'POST' / 'create' new DailyLog
+// 'PUT' / 'findOneAndUpdate' to push a new Daily Calculations Object into a specific User found by _id
 
-// 'GET' / 'find' all DailyLogs
+app.put('/user/:_id/newcalc', function (req, res) {
+    var calcObj = req.body;
 
-// 'GET' / 'findOne' DailyLog by _id
+    db.users.findOneAndUpdate(
+        {_id: req.params._id},
+        { '$push': { 'daily_calc': calcObj } },
+        function (err, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(success);
+            }
+        })
+        .then(function(dbUserUpdate) {
+            res.json(dbUserUpdate)
+        });
+});
 
-// 'POST' / 'create' new DailyJournal
+// 'PUT' / 'findOneAndUpdate' to push a new Daily Journal Object into a specific User found by _id
 
-// 'GET' / 'find' all DailyJournals
+app.put('/user/:_id/newjournal', function (req, res) {
+    var journalObj = req.body;
 
-// 'GET' / 'findOne' DailyJournal by _id
+    db.users.findOneAndUpdate(
+        {_id: req.params._id},
+        { '$push': { 'daily_journal': journalObj } },
+        function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(success);
+            }
+        })
+        .then(function(dbUserUpdate) {
+            res.json(dbUserUpdate)
+        });
+});
 
-// 'POST' / 'create' new Calculations
 
-// 'GET' / 'findOne' Calculation by _id
+// 'PUT' / 'findOneAndUpdate' to edit existing Daily Journal Object by Journal _id
 
-// 'PUT' / 'findOneAndUpdate' Calculations by _id
+
+// 'PUT' / 'findOneAndUpdate' to delete existing Daily Journal Object by Journal _id
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
