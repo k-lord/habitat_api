@@ -34,7 +34,7 @@ app.get('/', function (req, res) {
 // API Routes will go here
 
 // 'POST' / 'create' new User
-app.post("/submit",bodyParser.json(), function(req, res) {
+app.post("/submit", bodyParser.json(), function(req, res) {
     // Create a new user using req.body
     db.users.create(req.body)
       .then(function(dbUser) {
@@ -59,31 +59,35 @@ app.get('/user', function (req, res) {
 
 // 'GET' / 'findOne' User by _id
 app.get('/user/:_id', function (req, res) {
-    db.users.findOne({ _id: req.params.id })
-        .then(function (dbUser) {
-            res.json(dbUser)
-        })
-        .catch(function (err) {
-            res.json(err);
-        });
+    db.users.findOne({ _id: req.params.id }, function (err, found) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        } else {
+            res.json(found)
+        }
+    })
 });
 
 // 'PUT' / 'findOneAndUpdate' User's Daily Log by user _id
 
-app.put('/user/:_id/log', function (req, res) {
-    db.users.findOneAndUpdate({ _id: req.params._id },
-        {
-            '$push': {
-                'daily_log': req.body
-                
+app.put('/user/:_id/newlog', function (req, res) {
+
+    var logObj = req.body;
+
+    db.users.findOneAndUpdate(
+        { _id: req.params._id },
+        { '$push': { 'daily_log': logObj } },
+        function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(success);
             }
         })
-    .then(function(dailyLog) {
-        res.json(dailyLog)
-    })
-    .catch(function(err) {
-        res.json(err);
-    });
+        .then(function (dbUserUpdate) {
+            res.json(dbUserUpdate)
+        });
 });
 
 // 'POST' / 'create' new DailyLog
