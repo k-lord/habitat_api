@@ -111,9 +111,26 @@ app.put('/user/:_id/newlog', function (req, res) {
         });
 });
 
+// 'PUT' / 'findOneAndUpdate' to $set updated Total Calculations Object into a specific User found by _id
+
+app.put('/user/:_id/newtotalcalc', function (req, res) {
+    var calcObj = req.body;
+
+    db.users.findOneAndUpdate(
+        {_id: req.params._id},
+        { '$set': {'total_calc': calcObj } },
+        function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log(success);
+            }
+        });   
+});
+
 // 'PUT' / 'findOneAndUpdate' to push a new Daily Calculations Object into a specific User found by _id
 
-app.put('/user/:_id/newcalc', function (req, res) {
+app.put('/user/:_id/newdailycalc', function (req, res) {
 
     var calcObj = req.body;
 
