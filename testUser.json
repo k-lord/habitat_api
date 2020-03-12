@@ -37,26 +37,56 @@
                 "to maintain mindful habits"
             ]
         },
-        "daily_log": {
-            "answer_1": 4,
-            "answer_2": true,
-            "answer_3": 6,
-            "answer_4": 1,
-            "answer_5": 4
-        },
+        "daily_log": [
+            {
+                "answer_1": 60,
+                "answer_2": true,
+                "answer_3": 72,
+                "answer_4": 51,
+                "answer_5": 65
+            },
+            {
+                "answer_1": 72,
+                "answer_2": true,
+                "answer_3": 85,
+                "answer_4": 41,
+                "answer_5": 90
+            },
+            {
+                "answer_1": 52,
+                "answer_2": true,
+                "answer_3": 61,
+                "answer_4": 70,
+                "answer_5": 45
+            }
+        ],
         "daily_journal": {
             "feels": "Today was a good day"
         },
-        "daily_calc": {
-            "mood_average": 0,
-            "self_average": 0,
-            "plus_plus_mood": 0,
-            "plus_mood": 0,
-            "minus_mood": 0,
-            "minus_minus_mood": 0
-        }
+        "daily_calc": [
+            {
+                "mood_average": 0,
+                "self_average": 60,
+                "work_school_mood": 72,
+                "life_mood": 51,
+                "world_mood": 65
+            },
+            {
+                "mood_average": 0,
+                "self_average": 72,
+                "work_school_mood": 85,
+                "life_mood": 41,
+                "world_mood": 90
+            },
+            {
+                "mood_average": 0,
+                "self_average": 52,
+                "work_school_mood": 61,
+                "life_mood": 70,
+                "world_mood": 45
+            }
+        ]
     },
-
     {
         "username": "klord",
         "password": "test456",
@@ -95,7 +125,6 @@
             ]
         },
         "daily_log": {
-            "date": 0,
             "answer_1": 1,
             "answer_2": 2,
             "answer_3": 1,
@@ -103,17 +132,14 @@
             "answer_5": 6
         },
         "daily_journal": {
-            "date": 0,
             "feels": "today was a not so good day"
         },
         "daily_calc": {
-            "date": 0,
             "mood_average": 0,
             "self_average": 0,
-            "plus_plus_mood": 0,
-            "plus_mood": 0,
-            "minus_mood": 0,
-            "minus_minus_mood": 0
+            "work_school_mood": 0,
+            "life_mood": 0,
+            "world_mood": 0
         }
     },
     {
@@ -155,7 +181,6 @@
             ]
         },
         "daily_log": {
-            "date": 0,
             "answer_1": 5,
             "answer_2": 5,
             "answer_3": 8,
@@ -163,17 +188,22 @@
             "answer_5": 1
         },
         "daily_journal": {
-            "date": 0,
             "feels": "today was a terrible, no good, very bad day"
         },
         "daily_calc": {
-            "date": 0,
             "mood_average": 0,
             "self_average": 0,
-            "plus_plus_mood": 0,
-            "plus_mood": 0,
-            "minus_mood": 0,
-            "minus_minus_mood": 0
+            "work_school_mood": 0,
+            "life_mood": 0,
+            "world_mood": 0
         }
+    },
+    {
+        "username": "plumcube",
+        "password": "testtest123"
+    },
+    {
+        "username": "haileyM",
+        "password": "testtest456"
     }
 ]
