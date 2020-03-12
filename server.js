@@ -71,13 +71,13 @@ app.get('/user/:_id', function (req, res) {
 
 // 'PUT' / 'findOneAndUpdate ' to save the First Quiz Object to a specific User found by _id
 
-app.get('/user/:_id/firstquiz', function (req, res) {
+app.put('/user/:_id/firstquiz', function (req, res) {
 
     var quizObj = req.body;
 
     db.users.findOneAndUpdate(
         { _id: req.params._id },
-        { first_quiz: quizObj },
+        { '$push': { 'first_quiz': quizObj } },
         function (error, success) {
             if (error) {
                 console.log(error);
