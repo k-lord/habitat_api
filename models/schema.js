@@ -116,7 +116,7 @@ var UserSchema = new Schema({
     daily_log: [ DailyLogSchema ],
     daily_journal: [ DailyJournalSchema ],
     daily_calc: [ DailyCalcSchema ],
-    total_cal: [TotalCalcSchema]
+    total_cal:  [ TotalCalcSchema ]
     
 });
 

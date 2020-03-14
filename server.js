@@ -64,6 +64,10 @@ app.get('/user/:_id', function (req, res) {
             console.log(err);
             res.send(err);
         } else {
+            let tempUser = {...user.toObject()}
+            tempUser.answer1Arr = user.daily_log.reduce((r, i)=>r + i.answer_1, 0)
+            console.log("100%")
+            console.log(tempUser)
             res.json(user)
         }
     })
