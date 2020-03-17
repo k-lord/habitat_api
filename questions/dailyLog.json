@@ -1,22 +1,27 @@
 [
     {
         "id": 1,
-        "Question": "How was your day?"
+        "Question": "How was your day?",
+        "type": "float"
     },
     {
         "id": 2,
-        "Question": "Did you do something today that brought you joy?"
+        "Question": "Did you do something today that brought you joy?",
+        "type": "boolean"
     },
     {
         "id": 3,
-        "Question": "How was work/school?"
+        "Question": "How was work/school?",
+        "type": "float"
     },
     {
         "id": 4,
-        "Question": "How was your day outside of work/school?"
+        "Question": "How was your day outside of work/school?",
+        "type": "float"
     },
     {
         "id": 5,
-        "Question": "How did you feel about the world today?"
+        "Question": "How did you feel about the world today?",
+        "type": "float"
     }
 ]
