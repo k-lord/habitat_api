@@ -219,8 +219,7 @@ app.put('/user/:_id/deletejournal', function (req, res) {
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Listen on port 3000
-app.listen(process.env.PORT || 3000, function () {
+app.listen(process.env.PORT || 3001, function () {
     console.log('Express server on port %d in %s mode', this.address().port, app.settings.env);
 })
 
