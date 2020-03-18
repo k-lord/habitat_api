@@ -69,7 +69,7 @@ app.get('/user/:_id', function (req, res) {
             let tempUser = {...user.toObject()}
             tempUser.answer1Arr = user.daily_log.reduce((r, i)=>r + i.answer_1, 0)
             console.log("100%")
-            console.log(tempUser)
+            console.log(tempUser2)
             res.json(user)
         }
     })
@@ -142,8 +142,8 @@ app.put('/user/:_id/newdailycalc', function (req, res) {
 
     db.users.findOneAndUpdate(
         { _id: req.params._id },
-        { '$push': { 'daily_calc': calcObj } },
-        function (err, success) {
+        { '$push': { 'daily_calc': {calcObj} } },
+        function (error, success) {
             if (error) {
                 console.log(error);
             } else {
