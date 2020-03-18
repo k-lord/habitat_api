@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var mongoose = require('mongoose');
 var logger = require('morgan');
+var cors = require('cors');
 let bodyParser = require('body-parser');
 
 // Initializing Express App
@@ -10,6 +11,7 @@ var app = express();
 
 // Middleware
 app.use(logger('dev'));
+app.use(cors())
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
